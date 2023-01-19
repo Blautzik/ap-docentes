@@ -49,6 +49,11 @@ export default {
       type: 'reference',
       to: [{ type: 'author' }],
     },
+    {
+      name: 'nombre',
+      title: 'Nombre',
+      type: 'string',
+    },
   ],
   preview: {
     select: {
