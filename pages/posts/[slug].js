@@ -33,13 +33,13 @@ export default function Post({ data = {}, preview }) {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header />
+        
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
             <article>
-              <Head>
+              <Head >
                 <title>
                   {post.title} 
                 </title>
@@ -60,6 +60,7 @@ export default function Post({ data = {}, preview }) {
                 coverImage={post.coverImage}
                 date={post.date}
                 author={post.author}
+                
               />
               <PostBody content={post.content} />
             </article>
@@ -67,6 +68,7 @@ export default function Post({ data = {}, preview }) {
             {morePosts.length > 0 && <MoreStories posts={morePosts} />}
           </>
         )}
+        <Header />
       </Container>
     </Layout>
   )

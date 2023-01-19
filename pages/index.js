@@ -8,6 +8,7 @@ import { CMS_NAME } from '../lib/constants'
 import { indexQuery } from '../lib/queries'
 import { usePreviewSubscription } from '../lib/sanity'
 import { getClient, overlayDrafts } from '../lib/sanity.server'
+import Selector from '../components/selector'
 
 export default function Index({ allPosts: initialAllPosts, preview }) {
   const { data: allPosts } = usePreviewSubscription(indexQuery, {
@@ -15,6 +16,7 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
     enabled: preview,
   })
   const [heroPost, ...morePosts] = allPosts || []
+
   return (
     <>
       <Layout preview={preview}>
@@ -23,7 +25,8 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
         </Head>
         <Container>
           <Intro />
-          {morePosts.length > 0 && <MoreStories posts={allPosts} />}
+          <Selector posts={allPosts} />
+          <MoreStories posts={allPosts} />
         </Container>
       </Layout>
     </>
