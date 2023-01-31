@@ -9,7 +9,7 @@ const Selector = ({ posts }) => {
     <div>
       <button onClick={()=> setOpen(!open)} className='text-4xl flex items-end mb-24'>seleccionar docente <VscChevronDown /> </button>
       { open &&
-      <SelectorLinks posts={posts}
+      <SelectorLinks posts={posts} 
       />
       }
       

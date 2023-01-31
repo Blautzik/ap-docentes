@@ -3,8 +3,8 @@ import Link from "next/link"
 const SelectorLink = ({slug, title}) => {
   return (
     
-  <div>
-    <Link href={`/posts/${slug}`} className="hover:underline relative">
+  <div className="py-1">
+    <Link href={`/posts/${slug}`} className="hover:underline relative p-5">
       {title}
     </Link>
   </div>
